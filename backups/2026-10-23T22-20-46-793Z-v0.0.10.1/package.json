@@ -1,0 +1,10 @@
+{
+  "name": "null-run",
+  "version": "0.0.10.1",
+  "private": true,
+  "description": "A three-lane reflex arcade game built with vanilla HTML, CSS, and JavaScript.",
+  "scripts": {
+    "check": "node --check game.js",
+    "backup": "node scripts/backup.js"
+  }
+}

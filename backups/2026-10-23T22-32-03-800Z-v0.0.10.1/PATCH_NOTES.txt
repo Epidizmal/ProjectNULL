@@ -1,0 +1,80 @@
+NULL//RUN PATCH NOTES
+====================
+
+Version 0.0.10.1 - 2026-10-23
+-----------------------------
+- Regrouped the streak counter and timer bar, divider, and shield in the existing corner HUD container.
+- Increased the desktop HUD scale to 1.2233 while preserving its top-right anchor, aligning its divider with the score divider.
+- Kept the mobile HUD scale unchanged and updated release labels and project guidance for version 0.0.10.1.
+- Documented a separate-terminal stop command for the local server in the README.
+- Added timestamped pre-edit project snapshots with an `npm run backup` command and restore guidance.
+- Added a fullscreen toggle beside pause and removed the divider between the streak and shield indicators without changing their scale.
+- Changed fullscreen to uniformly scale the original game frame to fit the display, with the site background color filling the surrounding space.
+
+Version 0.0.10 - 2026-10-23
+---------------------------
+- Enlarged the shield, divider, streak counter, and timer bar together by scaling the corner HUD from its top-right anchor.
+- Kept the HUD's existing placement and separate elements while bringing its divider closer to alignment with the score divider.
+- Updated release labels and project guidance for version 0.0.10.
+
+Version 0.0.9 - 2026-10-23
+--------------------------
+- Restored the game header to the compact height used in version 0.0.7.
+- Returned the shield and streak HUD to the upper-right corner of the game field without changing their established scale.
+- Swapped the HUD sides so the streak count and vertical timer are left of the divider and the shield icon is right of it.
+- Shifted the mobile start overlay below the HUD to prevent visual overlap.
+- Updated version labels, README, and project guidance for version 0.0.9.
+
+Version 0.0.8 - 2026-10-23
+--------------------------
+- Moved the shield and streak indicators into the game header, directly above the score and personal-best columns and on opposite sides of their divider.
+- Enlarged the shield, streak count, and timer bar while keeping the HUD responsive on mobile.
+- Updated release labels, README, and project guidance for version 0.0.8.
+
+Version 0.0.7 - 2026-10-23
+--------------------------
+- Enlarged the shield, streak count, and vertical streak timer in the game-corner HUD while keeping the group responsive on mobile.
+- Removed the player's vertical bob animation.
+- Added a directional lean, brief scale response, and light motion streaks when changing lanes by keyboard or touch.
+- Updated release labels and project documentation for version 0.0.7.
+
+Version 0.0.6 - 2026-10-23
+--------------------------
+- Enlarged the shield icon and positioned it to the right of the streak display in the game field's upper-right corner.
+- Moved the streak label and count to the left of its vertical timer bar; matched the streak display's height to the shield icon.
+- Updated the README, project guidance, and version labels for version 0.0.6.
+
+Version 0.0.5 - 2026-10-23
+--------------------------
+- Enlarged the shield glyph, removed its square frame, and combined shield and streak status in a vertical HUD stack at the game field's upper-right corner.
+- Rotated the streak timer into a bottom-up vertical bar beside its counter.
+- Made shield drops progressively rarer during a run, tapering from 6% to a 1% minimum spawn chance.
+- Updated the in-game hint, README, and release labels for version 0.0.5.
+
+Version 0.0.4 - 2026-10-23
+--------------------------
+- Reduced shield-cell spawn probability from 14% to 6% per spawned object.
+- Replaced the top-row shield counter with an icon in the game field's upper-right corner; its glow and check mark show when a shield is charged.
+- Added a streak timer bar that drains across the 3.5-second shard combo window.
+- Updated README instructions and release labels for version 0.0.4.
+
+Version 0.0.3 - 2026-10-23
+--------------------------
+- Added collectible cyan shield cells. One shield absorbs a thorn collision and grants a brief invulnerability window; collecting another shield while charged awards 100 points.
+- Added shard streaks. Consecutive shard pickups within 3.5 seconds build a combo, with increasing bonus points every third shard.
+- Added shield and streak counters to the run HUD, plus a player shield ring and an on-screen combo callout.
+- Updated the opening instructions, README, and release labels for version 0.0.3.
+
+Version 0.0.2 - 2026-10-23
+--------------------------
+- Bumped the project release version from 0.0.1 to 0.0.2 in package metadata and the visible page labels.
+- Added this patch-notes file to establish a versioned record of project changes.
+- Updated the project README and contributor guidance to require a patch-note entry for every future project change.
+- No gameplay behavior, controls, or scoring rules changed in this release.
+
+Version 0.0.1 - Initial release
+-------------------------------
+- Created NULL//RUN as a dependency-free, three-lane browser arcade game, playable directly from index.html.
+- Added a canvas-rendered animated game field, signal shards to collect, thorn pods to avoid, increasing difficulty, score tracking, and a locally saved personal best.
+- Added keyboard and touch lane controls, pause/resume, restart, and responsive desktop/mobile presentation.
+- Added version metadata, basic project documentation, and a JavaScript syntax-check command.

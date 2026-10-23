@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111311">
+    <meta name="description" content="A quick reflex arcade game. Keep the signal alive in NULL//RUN.">
+    <title>NULL//RUN</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="game.js"></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="wordmark" href="./" aria-label="NULL Run home"><span class="wordmark-mark">N</span>NULL<span class="wordmark-slash">//</span>RUN</a>
+        <div class="build-label"><span class="live-dot"></span> ARCADE BUILD <span class="version">v0.0.10.1</span></div>
+      </header>
+
+      <section class="intro" aria-labelledby="game-title">
+        <div>
+          <p class="eyebrow">A SIGNAL IN THE STATIC</p>
+          <h1 id="game-title">Stay in the <span>current.</span></h1>
+        </div>
+        <p class="intro-note">Three lanes. No second chances.<br>How long can you keep the signal alive?</p>
+      </section>
+
+      <section class="game-panel" aria-label="NULL Run arcade game">
+        <div class="game-topline">
+          <div class="run-state"><span class="state-light" id="state-light"></span><span id="state-label">SIGNAL STANDBY</span></div>
+          <div class="scoreboard" aria-live="polite">
+            <div class="score-cell"><span class="score-label">SCORE</span><span class="score-value" id="score">00000</span></div>
+            <div class="score-divider"></div>
+            <div class="score-cell best-cell"><span class="score-label">PERSONAL BEST</span><span class="score-value" id="best">00000</span></div>
+          </div>
+        </div>
+
+        <div class="stage" id="stage">
+          <canvas id="game" width="960" height="560" aria-label="Game field. Move between three lanes to collect signal shards, cyan shields, and avoid thorn pods. Consecutive shards earn bonus points."></canvas>
+          <div class="stage-vignette" aria-hidden="true"></div>
+          <div class="stage-powerups">
+            <div class="streak-meter" role="group" aria-label="Shard streak status" title="Consecutive shards earn combo points">
+              <span class="streak-readout">
+                <svg class="streak-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 2.8 5.5 13h5l-.8 8.2L18.5 11h-5.1l-.2-8.2Z" /></svg>
+                <span class="status-label">STREAK</span>
+                <span class="streak-count" id="streak-count" aria-live="polite">0</span>
+              </span>
+              <span class="streak-track" id="streak-timer-track" role="progressbar" aria-label="Time remaining on shard streak" aria-valuemin="0" aria-valuemax="3.5" aria-valuenow="0"><span id="streak-timer-bar"></span></span>
+            </div>
+            <div class="score-divider powerup-divider" aria-hidden="true"></div>
+            <div class="shield-icon" id="shield-indicator" role="img" aria-label="No shield charged" title="Collect a cyan shield to absorb one thorn hit">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8 20 6v5.4c0 4.8-3.4 8.1-8 9.8-4.6-1.7-8-5-8-9.8V6l8-3.2Z" /><path class="shield-check" d="m8.5 12.1 2.2 2.2 4.8-5" /></svg>
+              <span class="shield-charge" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="stage-overlay is-visible" id="overlay">
+            <div class="overlay-kicker" id="overlay-kicker">INCOMING TRANSMISSION</div>
+            <h2 id="overlay-title">The void is moving.</h2>
+            <p id="overlay-copy">Build shard streaks for bonus points. Shields absorb a thorn and grow rarer over time.</p>
+            <button class="primary-button" id="start-button" type="button"><span>Start run</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+            <div class="overlay-hint">PRESS <kbd>SPACE</kbd> TO LAUNCH</div>
+          </div>
+          <div class="corner-mark corner-mark-left" aria-hidden="true">NR—001</div>
+          <div class="corner-mark corner-mark-right" aria-hidden="true">SECTOR 03</div>
+        </div>
+
+        <footer class="game-controls">
+          <div class="control-hint"><span class="key-cluster"><kbd>←</kbd><kbd>→</kbd></span><span>MOVE LANES</span><span class="control-or">OR</span><span class="key-cluster"><kbd>A</kbd><kbd>D</kbd></span></div>
+          <div class="control-actions">
+            <button class="icon-button" id="pause-button" type="button" aria-label="Pause game" title="Pause game" disabled><span aria-hidden="true">Ⅱ</span></button>
+            <button class="icon-button reset-button" id="reset-button" type="button" aria-label="Restart game" title="Restart game"><span aria-hidden="true">↻</span></button>
+          </div>
+        </footer>
+      </section>
+
+      <footer class="page-footer">
+        <span>BUILT FOR THE SPACE BETWEEN SIGNALS</span>
+        <span>NULL//RUN <span class="footer-version">0.0.10.1</span></span>
+      </footer>
+    </main>
+  </body>
+</html>
